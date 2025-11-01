@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Vista Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Desktop -->
+    <div id="desktop">
+        <!-- Desktop Icons -->
+        <div id="desktop-icons">
+            <div class="desktop-icon" data-window="about">
+                <div class="icon-image">
+                    <img src="icons/AboutMe.png" alt="About Me">
+                </div>
+                <span class="icon-label">About Me</span>
+            </div>
+
+            <div class="desktop-icon" data-window="projects">
+                <div class="icon-image">
+                    <img src="icons/projects.png" alt="Projects">
+                </div>
+                <span class="icon-label">My Projects</span>
+            </div>
+
+            <div class="desktop-icon" data-window="resume">
+                <div class="icon-image">
+                    <img src="icons/resume.png" alt="Resume">
+                </div>
+                <span class="icon-label">Resume</span>
+            </div>
+
+            <div class="desktop-icon" data-window="contact">
+                <div class="icon-image">
+                    <img src="icons/contact.png" alt="Contact">
+                </div>
+                <span class="icon-label">Contact</span>
+            </div>
+
+            <div class="desktop-icon" data-window="gallery">
+                <div class="icon-image">
+                    <img src="icons/gallery.png" alt="Gallery">
+                </div>
+                <span class="icon-label">Gallery</span>
+            </div>
+        </div>
+
+        <!-- Windows Container -->
+        <div id="windows-container"></div>
+
+        <!-- Taskbar -->
+        <div id="taskbar">
+            <button id="start-button">
+                <div class="start-orb"></div>
+                <span>Start</span>
+            </button>
+            <div id="taskbar-windows"></div>
+            <div id="system-tray">
+                <span id="clock"></span>
+            </div>
+        </div>
+
+        <!-- Start Menu -->
+        <div id="start-menu" class="hidden">
+            <div class="start-menu-sidebar"></div>
+            <div class="start-menu-content">
+                <div class="start-menu-item" data-window="about">
+                    <div class="start-menu-icon">
+                        <img src="icons/AboutMe.png" alt="About Me">
+                    </div>
+                    <span>About Me</span>
+                </div>
+                <div class="start-menu-item" data-window="projects">
+                    <div class="start-menu-icon">
+                        <img src="icons/projects.png" alt="Projects">
+                    </div>
+                    <span>My Projects</span>
+                </div>
+                <div class="start-menu-item" data-window="resume">
+                    <div class="start-menu-icon">
+                        <img src="icons/resume.png" alt="Resume">
+                    </div>
+                    <span>Resume</span>
+                </div>
+                <div class="start-menu-item" data-window="contact">
+                    <div class="start-menu-icon">
+                        <img src="icons/contact.png" alt="Contact">
+                    </div>
+                    <span>Contact</span>
+                </div>
+                <div class="start-menu-item" data-window="gallery">
+                    <div class="start-menu-icon">
+                        <img src="icons/gallery.png" alt="Gallery">
+                    </div>
+                    <span>Gallery</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
