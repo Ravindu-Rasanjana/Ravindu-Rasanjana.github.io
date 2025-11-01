@@ -98,7 +98,28 @@ document.addEventListener('DOMContentLoaded', () => {
     initDesktopIcons();
     initStartMenu();
     initClock();
+    playStartupSound();
 });
+
+// Play Windows XP startup sound
+function playStartupSound() {
+    const audio = document.getElementById('startup-sound');
+    if (audio) {
+        audio.volume = 0.5;
+        // Try to play immediately
+        const playPromise = audio.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.catch(err => {
+                // If autoplay is blocked, play on first user interaction
+                console.log('Autoplay blocked, will play on first click');
+                document.body.addEventListener('click', () => {
+                    audio.play().catch(e => console.log('Audio play failed:', e));
+                }, { once: true });
+            });
+        }
+    }
+}
 
 // Desktop icons
 function initDesktopIcons() {
