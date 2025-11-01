@@ -764,3 +764,445 @@ body {
     font-weight: 600;
     font-size: 18px;
 }
+
+/* PDF Reader */
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #525252;
+}
+
+.pdf-toolbar {
+    background: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
+    border-bottom: 1px solid #999;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pdf-toolbar button {
+    padding: 6px 12px;
+    background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+    border: 1px solid #999;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.pdf-toolbar button:hover {
+    background: linear-gradient(180deg, #e0f0ff 0%, #c0d8f0 100%);
+}
+
+.pdf-toolbar button:active {
+    background: linear-gradient(180deg, #c0d8f0 0%, #a0c0e0 100%);
+}
+
+.pdf-toolbar input {
+    width: 60px;
+    padding: 4px;
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+
+.pdf-content {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pdf-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+}
+
+.pdf-placeholder {
+    text-align: center;
+    color: white;
+}
+
+.pdf-placeholder button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: linear-gradient(180deg, #0997ff 0%, #0053ee 100%);
+    border: 1px solid #0050ee;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Media Player */
+.media-player {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.media-toolbar {
+    background: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
+    border-bottom: 1px solid #999;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+}
+
+.media-toolbar span {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.media-toolbar span:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.media-display {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.media-display img,
+.media-display video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.media-placeholder {
+    text-align: center;
+    color: #888;
+}
+
+.media-placeholder button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: linear-gradient(180deg, #0997ff 0%, #0053ee 100%);
+    border: 1px solid #0050ee;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.media-controls {
+    background: linear-gradient(180deg, #2e5f9a 0%, #1a3a6a 100%);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.media-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.media-btn {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(180deg, #4a8fd9 0%, #2e6fb9 100%);
+    border: 1px solid #1a4f89;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-btn:hover {
+    background: linear-gradient(180deg, #5a9fe9 0%, #3e7fc9 100%);
+}
+
+.media-btn:active {
+    background: linear-gradient(180deg, #2e6fb9 0%, #1e5f99 100%);
+}
+
+.media-timeline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 11px;
+}
+
+.timeline-bar {
+    flex: 1;
+    height: 8px;
+    background: #1a3a6a;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.timeline-progress {
+    height: 100%;
+    background: linear-gradient(180deg, #4a8fd9 0%, #2e6fb9 100%);
+    border-radius: 4px;
+    width: 0%;
+}
+
+.media-volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.volume-slider {
+    width: 80px;
+    height: 4px;
+    background: #1a3a6a;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.volume-level {
+    height: 100%;
+    background: linear-gradient(180deg, #4a8fd9 0%, #2e6fb9 100%);
+    border-radius: 2px;
+    width: 70%;
+}
+
+.file-input-hidden {
+    display: none;
+}
+
+/* PDF Reader */
+.pdf-viewer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #525252;
+}
+
+.pdf-toolbar {
+    background: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
+    border-bottom: 1px solid #999;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pdf-toolbar button {
+    padding: 6px 12px;
+    background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+    border: 1px solid #999;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.pdf-toolbar button:hover {
+    background: linear-gradient(180deg, #e0f0ff 0%, #c0d8f0 100%);
+}
+
+.pdf-toolbar button:active {
+    background: linear-gradient(180deg, #c0d8f0 0%, #a0c0e0 100%);
+}
+
+.pdf-toolbar input {
+    width: 60px;
+    padding: 4px;
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+
+.pdf-content {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pdf-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+}
+
+.pdf-placeholder {
+    text-align: center;
+    color: white;
+}
+
+.pdf-placeholder button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: linear-gradient(180deg, #0997ff 0%, #0053ee 100%);
+    border: 1px solid #0050ee;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Media Player */
+.media-player {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.media-toolbar {
+    background: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
+    border-bottom: 1px solid #999;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+}
+
+.media-toolbar span {
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.media-toolbar span:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.media-display {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.media-display img,
+.media-display video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.media-placeholder {
+    text-align: center;
+    color: #888;
+}
+
+.media-placeholder button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: linear-gradient(180deg, #0997ff 0%, #0053ee 100%);
+    border: 1px solid #0050ee;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.media-controls {
+    background: linear-gradient(180deg, #2e5f9a 0%, #1a3a6a 100%);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.media-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.media-btn {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(180deg, #4a8fd9 0%, #2e6fb9 100%);
+    border: 1px solid #1a4f89;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-btn:hover {
+    background: linear-gradient(180deg, #5a9fe9 0%, #3e7fc9 100%);
+}
+
+.media-btn:active {
+    background: linear-gradient(180deg, #2e6fb9 0%, #1e5f99 100%);
+}
+
+.media-timeline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 11px;
+}
+
+.timeline-bar {
+    flex: 1;
+    height: 8px;
+    background: #1a3a6a;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+.timeline-progress {
+    height: 100%;
+    background: linear-gradient(180deg, #4a8fd9 0%, #2e6fb9 100%);
+    border-radius: 4px;
+    width: 0%;
+}
+
+.media-volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.volume-slider {
+    width: 80px;
+    height: 4px;
+    background: #1a3a6a;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.volume-level {
+    height: 100%;
+    background: linear-gradient(180deg, #4a8fd9 0%, #2e6fb9 100%);
+    border-radius: 2px;
+    width: 70%;
+}
+
+.file-input-hidden {
+    display: none;
+}
