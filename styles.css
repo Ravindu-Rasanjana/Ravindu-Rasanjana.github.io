@@ -89,6 +89,18 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
     overflow: hidden;
     pointer-events: auto;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+.window-resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 0;
+    bottom: 0;
+    cursor: nwse-resize;
+    z-index: 10;
 }
 
 .window.minimized {

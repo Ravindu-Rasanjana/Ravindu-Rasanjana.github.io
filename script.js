@@ -3,8 +3,11 @@ let windows = [];
 let activeWindowId = null;
 let windowCounter = 0;
 let isDragging = false;
+let isResizing = false;
 let dragTarget = null;
+let resizeTarget = null;
 let dragOffset = { x: 0, y: 0 };
+let resizeStart = { x: 0, y: 0, width: 0, height: 0 };
 
 // Window content templates
 const windowContent = {
@@ -224,6 +227,7 @@ function renderWindow(window) {
         <div class="window-content">
             ${windowContent[window.type]}
         </div>
+        <div class="window-resize-handle"></div>
     `;
 
     container.appendChild(windowEl);
@@ -231,6 +235,9 @@ function renderWindow(window) {
     // Add event listeners
     const titlebar = windowEl.querySelector('.window-titlebar');
     titlebar.addEventListener('mousedown', (e) => startDragging(e, window.id));
+
+    const resizeHandle = windowEl.querySelector('.window-resize-handle');
+    resizeHandle.addEventListener('mousedown', (e) => startResizing(e, window.id));
 
     const minimizeBtn = windowEl.querySelector('.minimize');
     minimizeBtn.addEventListener('click', () => minimizeWindow(window.id));
@@ -352,24 +359,66 @@ function startDragging(e, id) {
     setActiveWindow(id);
 }
 
-document.addEventListener('mousemove', (e) => {
-    if (!isDragging || !dragTarget) return;
-
-    const window = windows.find(w => w.id === dragTarget);
+// Resizing
+function startResizing(e, id) {
+    e.stopPropagation();
+    const window = windows.find(w => w.id === id);
     if (window.maximized) return;
 
-    const newX = e.clientX - dragOffset.x;
-    const newY = Math.max(0, e.clientY - dragOffset.y);
+    isResizing = true;
+    resizeTarget = id;
+    
+    const windowEl = document.getElementById(`window-${id}`);
+    const rect = windowEl.getBoundingClientRect();
+    
+    resizeStart = {
+        x: e.clientX,
+        y: e.clientY,
+        width: rect.width,
+        height: rect.height
+    };
 
-    window.x = newX;
-    window.y = newY;
+    setActiveWindow(id);
+}
 
-    const windowEl = document.getElementById(`window-${dragTarget}`);
-    windowEl.style.left = `${newX}px`;
-    windowEl.style.top = `${newY}px`;
+document.addEventListener('mousemove', (e) => {
+    if (isDragging && dragTarget) {
+        const window = windows.find(w => w.id === dragTarget);
+        if (window.maximized) return;
+
+        const newX = e.clientX - dragOffset.x;
+        const newY = Math.max(0, e.clientY - dragOffset.y);
+
+        window.x = newX;
+        window.y = newY;
+
+        const windowEl = document.getElementById(`window-${dragTarget}`);
+        windowEl.style.left = `${newX}px`;
+        windowEl.style.top = `${newY}px`;
+    }
+    
+    if (isResizing && resizeTarget) {
+        const window = windows.find(w => w.id === resizeTarget);
+        if (window.maximized) return;
+
+        const deltaX = e.clientX - resizeStart.x;
+        const deltaY = e.clientY - resizeStart.y;
+
+        const newWidth = Math.max(300, resizeStart.width + deltaX);
+        const newHeight = Math.max(200, resizeStart.height + deltaY);
+
+        window.width = newWidth;
+        window.height = newHeight;
+
+        const windowEl = document.getElementById(`window-${resizeTarget}`);
+        windowEl.style.width = `${newWidth}px`;
+        windowEl.style.height = `${newHeight}px`;
+    }
 });
 
 document.addEventListener('mouseup', () => {
     isDragging = false;
+    isResizing = false;
     dragTarget = null;
+    resizeTarget = null;
 });
