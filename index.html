@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows Vista Portfolio</title>
+    <title>Windows XP Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,8 +12,46 @@
         <source src="xp.mp3" type="audio/mpeg">
     </audio>
 
+    <!-- Login Screen -->
+    <div id="login-screen">
+        <div id="login-top-bar"></div>
+
+            <div class="login-content">
+                <div class="windows-logo">
+                    <img src="icons/xp.png" alt="Windows XP" style="width: 80px; height: 80px;">
+                    <div class="windows-text">Microsoft Windows <span style="font-weight: bold;">XP</span></div>
+                    <div class="login-prompt">To begin, click your user name</div>
+                </div>
+
+            <div class="divider-line"></div> <!-- ✨ Thin vertical line -->
+
+            <div class="user-profile" id="user-profile">
+                <div class="profile-icon">
+                    <img src="icons/AboutMe.png" alt="User">
+                </div>
+                <div class="profile-name">Ravindu Rasanjana</div>
+            </div>
+        </div>
+
+
+        <div class="login-footer">
+            <div class="footer-left">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                    <line x1="12" y1="2" x2="12" y2="12"></line>
+                </svg>
+                <span>Turn off computer</span>
+            </div>
+            <div class="footer-right">
+                After you log on, you can add or change accounts.<br>
+                Just go to Control Panel and click User Accounts.
+            </div>
+        </div>
+    </div>
+
+
     <!-- Desktop -->
-    <div id="desktop">
+    <div id="desktop" class="hidden">
         <!-- Desktop Icons -->
         <div id="desktop-icons">
             <div class="desktop-icon" data-window="about">

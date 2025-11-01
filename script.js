@@ -95,29 +95,43 @@ const windowTitles = {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    initLoginScreen();
     initDesktopIcons();
     initStartMenu();
     initClock();
-    playStartupSound();
 });
+
+// Login Screen
+function initLoginScreen() {
+    const userProfile = document.getElementById('user-profile');
+    const loginScreen = document.getElementById('login-screen');
+    const desktop = document.getElementById('desktop');
+    
+    if (userProfile) {
+        userProfile.addEventListener('click', () => {
+            // Play startup sound
+            playStartupSound();
+            
+            // Fade out login screen
+            loginScreen.style.transition = 'opacity 0.5s';
+            loginScreen.style.opacity = '0';
+            
+            setTimeout(() => {
+                loginScreen.style.display = 'none';
+                desktop.classList.remove('hidden');
+            }, 500);
+        });
+    }
+}
 
 // Play Windows XP startup sound
 function playStartupSound() {
     const audio = document.getElementById('startup-sound');
     if (audio) {
         audio.volume = 0.5;
-        // Try to play immediately
-        const playPromise = audio.play();
-        
-        if (playPromise !== undefined) {
-            playPromise.catch(err => {
-                // If autoplay is blocked, play on first user interaction
-                console.log('Autoplay blocked, will play on first click');
-                document.body.addEventListener('click', () => {
-                    audio.play().catch(e => console.log('Audio play failed:', e));
-                }, { once: true });
-            });
-        }
+        audio.play().catch(err => {
+            console.log('Audio play failed:', err);
+        });
     }
 }
 
